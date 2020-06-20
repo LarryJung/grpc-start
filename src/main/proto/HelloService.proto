@@ -1,0 +1,17 @@
+syntax = "proto3";
+option java_multiple_files = true;
+//option java_package = "com.larry.grpcstart";
+package com.larry.grpcstart;
+
+message HelloRequest {
+  string firstName = 1; // 숫자는 attribute 당 unique 한 값이다. Protocol buffer의 요구사항임
+  string lastName = 2;
+}
+
+message HelloResponse {
+  string greeting = 1;
+}
+
+service HelloService {
+  rpc sayHello(HelloRequest) returns (HelloResponse);
+}
